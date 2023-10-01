@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ng640d5tpogu"]
+
+[ext_resource type="Script" path="res://2D/Code/Bee.gd" id="1_30s4w"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_30s4w")
+radius = 300

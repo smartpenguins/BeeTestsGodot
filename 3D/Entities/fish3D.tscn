@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3idoiybime7y"]
+
+[ext_resource type="PackedScene" uid="uid://btgwm4k7hygp0" path="res://Art/fish.fbx" id="1_4ixsh"]
+[ext_resource type="Script" path="res://3D/Code/Bee3D.cs" id="2_bb4j5"]
+
+[node name="fish" instance=ExtResource("1_4ixsh")]
+transform = Transform3D(4.25749, 0, 0, 0, 4.25749, 0, 0, 0, 4.25749, 0, 0, 0.77)
+script = ExtResource("2_bb4j5")
+speed = 6
+radius = 5

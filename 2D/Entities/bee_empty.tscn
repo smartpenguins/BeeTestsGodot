@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://wt1kccyxf3sa"]
+
+[ext_resource type="PackedScene" uid="uid://d3m1n3laqwu5n" path="res://2D/Entities/bee_srpite2d.tscn" id="1_ngldu"]
+
+[node name="Bee" instance=ExtResource("1_ngldu")]
+script = null

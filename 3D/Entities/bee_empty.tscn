@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bo4rimug8ma8h"]
+
+[ext_resource type="PackedScene" uid="uid://du7vv8602pwd3" path="res://3D/Entities/bee_sprite3d.tscn" id="1_13vwv"]
+
+[node name="BeeD3" instance=ExtResource("1_13vwv")]
+script = null

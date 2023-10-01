@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://du7vv8602pwd3"]
+
+[ext_resource type="Texture2D" uid="uid://bh3qqs3xcsne" path="res://Art/bee.png" id="1_lp4kw"]
+[ext_resource type="Script" path="res://3D/Code/Bee3D.cs" id="2_2ex8v"]
+
+[node name="BeeD3" type="Sprite3D"]
+transform = Transform3D(0.333, 0, 0, 0, 0.333, 0, 0, 0, 0.333, 0.115, -0.434, 0.01)
+texture = ExtResource("1_lp4kw")
+script = ExtResource("2_2ex8v")
+speed = 6
+radius = 5

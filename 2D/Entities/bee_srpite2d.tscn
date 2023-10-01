@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3m1n3laqwu5n"]
+
+[ext_resource type="Texture2D" uid="uid://bh3qqs3xcsne" path="res://Art/bee.png" id="1_hounf"]
+[ext_resource type="Script" path="res://2D/Code/Bee.cs" id="2_2hovn"]
+
+[node name="Bee" type="Sprite2D"]
+position = Vector2(-14.8096, 112.132)
+scale = Vector2(0.248512, 0.248513)
+texture = ExtResource("1_hounf")
+script = ExtResource("2_2hovn")

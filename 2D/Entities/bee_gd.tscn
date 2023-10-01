@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bha3o4hynjh68"]
+
+[ext_resource type="PackedScene" uid="uid://d3m1n3laqwu5n" path="res://2D/Entities/bee_srpite2d.tscn" id="1_4gegd"]
+[ext_resource type="Script" path="res://2D/Code/Bee.gd" id="2_8m614"]
+
+[node name="Bee" instance=ExtResource("1_4gegd")]
+script = ExtResource("2_8m614")
+speed = 400
+radius = 300

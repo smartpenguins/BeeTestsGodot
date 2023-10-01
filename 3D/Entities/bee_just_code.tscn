@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcn0nnvsggrc4"]
+
+[ext_resource type="Script" path="res://3D/Code/Bee3D.cs" id="1_mkhaq"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_mkhaq")
+speed = 6
+radius = 5
