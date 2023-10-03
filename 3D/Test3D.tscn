@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://do6ahejrldpx6"]
+[gd_scene load_steps=26 format=3 uid="uid://do6ahejrldpx6"]
 
 [ext_resource type="Texture2D" uid="uid://bk1vugbyhh6j4" path="res://Art/bg.png" id="1_2nr5o"]
 [ext_resource type="Script" path="res://3D/Code/MultiMeshMove.cs" id="2_2vi2j"]
@@ -113,6 +113,10 @@ size = Vector2(0.02, 0.02)
 transform_format = 1
 mesh = SubResource("QuadMesh_bpvpr")
 
+[sub_resource type="MultiMesh" id="MultiMesh_f572b"]
+transform_format = 1
+mesh = SubResource("QuadMesh_bpvpr")
+
 [sub_resource type="LabelSettings" id="LabelSettings_my3fw"]
 font_size = 60
 font_color = Color(0.239216, 0.239216, 0.239216, 1)
@@ -145,6 +149,13 @@ radius = 0.5
 speed = 0.5
 action = "mmq"
 
+[node name="MultiMeshQuad2" type="MultiMeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -1.36003, -0.613297, 1.34855)
+multimesh = SubResource("MultiMesh_f572b")
+script = ExtResource("2_2vi2j")
+action = "gd"
+run = false
+
 [node name="Background" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.019, 0)
 sorting_offset = -2.0
@@ -166,12 +177,14 @@ lable = NodePath("../../Node/Label Count")
 [node name="BeeD3" parent="Background/Beehive" instance=ExtResource("5_se1kx")]
 
 [node name="QuadSetup" type="Node3D" parent="Background/Beehive" node_paths=PackedStringArray("lable")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, -1)
 script = ExtResource("3_bmqai")
 bee_scene = ExtResource("8_o0hbb")
 lable = NodePath("../../../Node/Label Count")
 key = "quad"
 
 [node name="FishSetup" type="Node3D" parent="Background/Beehive" node_paths=PackedStringArray("lable")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -804.668)
 script = ExtResource("3_bmqai")
 bee_scene = ExtResource("6_3dkh1")
 lable = NodePath("../../../Node/Label Count")
@@ -200,8 +213,9 @@ toggle = true
 
 [node name="HiveLabels" type="Node" parent="Node"]
 
-[node name="Node2" type="Node" parent="Node/HiveLabels"]
+[node name="Node2" type="Node" parent="Node/HiveLabels" node_paths=PackedStringArray("canvasItem")]
 script = ExtResource("9_loarv")
+canvasItem = NodePath("Label")
 action = "cs"
 
 [node name="Label" type="Label" parent="Node/HiveLabels/Node2"]
@@ -218,8 +232,9 @@ text = "C#"
 label_settings = SubResource("LabelSettings_my3fw")
 horizontal_alignment = 1
 
-[node name="Node3" type="Node" parent="Node/HiveLabels"]
+[node name="Node3" type="Node" parent="Node/HiveLabels" node_paths=PackedStringArray("canvasItem")]
 script = ExtResource("9_loarv")
+canvasItem = NodePath("Label")
 action = "quad"
 
 [node name="Label" type="Label" parent="Node/HiveLabels/Node3"]
@@ -236,8 +251,9 @@ text = "Quad C#"
 label_settings = SubResource("LabelSettings_my3fw")
 horizontal_alignment = 1
 
-[node name="Node4" type="Node" parent="Node/HiveLabels"]
+[node name="Node4" type="Node" parent="Node/HiveLabels" node_paths=PackedStringArray("canvasItem")]
 script = ExtResource("9_loarv")
+canvasItem = NodePath("Label")
 action = "empty"
 
 [node name="Label" type="Label" parent="Node/HiveLabels/Node4"]
@@ -254,8 +270,9 @@ text = "Empty"
 label_settings = SubResource("LabelSettings_my3fw")
 horizontal_alignment = 1
 
-[node name="Node5" type="Node" parent="Node/HiveLabels"]
+[node name="Node5" type="Node" parent="Node/HiveLabels" node_paths=PackedStringArray("canvasItem")]
 script = ExtResource("9_loarv")
+canvasItem = NodePath("Label")
 action = "justCode"
 
 [node name="Label" type="Label" parent="Node/HiveLabels/Node5"]
@@ -272,8 +289,9 @@ text = "C# Code"
 label_settings = SubResource("LabelSettings_my3fw")
 horizontal_alignment = 1
 
-[node name="Node6" type="Node" parent="Node/HiveLabels"]
+[node name="Node6" type="Node" parent="Node/HiveLabels" node_paths=PackedStringArray("canvasItem")]
 script = ExtResource("9_loarv")
+canvasItem = NodePath("Label")
 action = "fish"
 
 [node name="Label" type="Label" parent="Node/HiveLabels/Node6"]

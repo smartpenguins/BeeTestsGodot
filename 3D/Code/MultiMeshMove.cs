@@ -9,6 +9,7 @@ public partial class MultiMeshMove : MultiMeshInstance3D
 	[Export] float radius = .2f;
 	[Export] float speed = 3f;
 	[Export] string action = "mmf";
+	[Export] bool run = true;
 	Vector3 startPoint=new Vector3(0,0,0);
 
 
@@ -27,17 +28,20 @@ public partial class MultiMeshMove : MultiMeshInstance3D
 	
 	public override void _Process(double delta)
 	{
-		float df = (float) delta;
-		for(int i=0;i<Multimesh.InstanceCount;i++){
-			Transform3D transform = Multimesh.GetInstanceTransform(i);
-			Vector3 nextPoint = nextPoints[i];
-			if(transform.Origin.DistanceSquaredTo(nextPoint)<.01f){
-				float angleRad = random.RandfRange(-MathF.PI,MathF.PI);
-				nextPoint = startPoint + new Vector3(MathF.Cos(angleRad),MathF.Sin(angleRad),0)*random.RandfRange(0,radius);
-				nextPoints[i]=nextPoint;
+		if(run)
+		{
+			float df = (float) delta;
+			for(int i=0;i<Multimesh.InstanceCount;i++){
+				Transform3D transform = Multimesh.GetInstanceTransform(i);
+				Vector3 nextPoint = nextPoints[i];
+				if(transform.Origin.DistanceSquaredTo(nextPoint)<.01f){
+					float angleRad = random.RandfRange(-MathF.PI,MathF.PI);
+					nextPoint = startPoint + new Vector3(MathF.Cos(angleRad),MathF.Sin(angleRad),0)*random.RandfRange(0,radius);
+					nextPoints[i]=nextPoint;
+				}
+				transform.Origin += transform.Origin.DirectionTo(nextPoint) * (speed * df);
+				Multimesh.SetInstanceTransform(i,transform);
 			}
-			transform.Origin += transform.Origin.DirectionTo(nextPoint) * (speed * df);
-			Multimesh.SetInstanceTransform(i,transform);
 		}
 	}
 
